@@ -7,6 +7,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>test Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -31,5 +33,28 @@
   </dependencies>
   <build>
     <finalName>test</finalName>
+    
+    <plugins>
+    
+    <plugin>
+
+    <groupId>org.apache.tomcat.maven</groupId>
+    <artifactId>tomcat7-maven-plugin</artifactId>
+    <version>2.2</version>
+
+    <configuration>
+        <url>http://192.168.119.151:8080/manager/text</url>
+        <username>admin</username>
+        <password>testingworks</password>
+        <update>true</update>
+        <path>/test</path>
+    </configuration>
+
+</plugin>
+    
+    </plugins>
   </build>
+
+  
+  
 </project>
